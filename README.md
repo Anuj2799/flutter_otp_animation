@@ -34,7 +34,7 @@ import 'package:animated_otp_field/animated_otp_field.dart';
 - backgroundHeight is used to set the height of the OTP field, by default it is set to 50.0
 
 #### backgroundWidth:
-- backgroundWidth is used to set the width of the OTP field, by default it is set to 280.0
+- backgroundWidth is used to set the width of the OTP field, by default it is set to 250.0
 
 #### fieldWidth:
 - fieldWidth property is use to set the width of the unselected field where every text will be entered
