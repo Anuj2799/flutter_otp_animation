@@ -42,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onEnd: () {},
           separatedBorderRadius: true,
           autoDismissKeyboard: true,
+          direction: Direction.rtl,
         ),
       ),
     );
