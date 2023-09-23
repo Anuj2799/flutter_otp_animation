@@ -3,6 +3,18 @@ Animated Otp Field is OTP text field having worm type animation with full custom
 ## Inspired from
 [Text Field Interaction](https://dribbble.com/shots/5005121-Text-Field-Interaction-Experiment-IV)
 
+## Screenshots and Screen recording
+
+<br />
+
+#### Animated OTP Field with direction left-to-right `direction: Direction.ltr`
+![Searchbar Animation](https://github.com/Anuj2799/searchbar_animation/blob/master/assets/searchbar_animation_vid.gif)
+
+<br />
+
+#### Animated OTP Field with direction right-to-left `direction: Direction.rtl`
+![Searchbar Animation](https://github.com/Anuj2799/searchbar_animation/blob/master/assets/searchbar_animation_autofocus.gif)
+
 ## Usage
 
 #### Installation
