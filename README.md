@@ -1,7 +1,7 @@
 Animated Otp Field is OTP text field having worm type animation.
 
 ## Inspired from
-'[DecoratedBoxTransition](https://api.flutter.dev/flutter/widgets/DecoratedBoxTransition-class.html)'
+[Text Field Interaction](https://dribbble.com/shots/5005121-Text-Field-Interaction-Experiment-IV)
 
 ## Getting started
 
