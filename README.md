@@ -8,12 +8,12 @@ Animated Otp Field is OTP text field having worm type animation with full custom
 <br />
 
 #### Animated OTP Field with direction left-to-right `direction: Direction.ltr`
-![Searchbar Animation](https://github.com/Anuj2799/searchbar_animation/blob/master/assets/searchbar_animation_vid.gif)
+![Animated OTP Field](https://github.com/Anuj2799/animated_otp_field/blob/development/assets/anim_otp_ltr.gif)
 
 <br />
 
 #### Animated OTP Field with direction right-to-left `direction: Direction.rtl`
-![Searchbar Animation](https://github.com/Anuj2799/searchbar_animation/blob/master/assets/searchbar_animation_autofocus.gif)
+![Animated OTP Field](https://github.com/Anuj2799/animated_otp_field/blob/development/assets/anim_otp_rtl.gif)
 
 ## Usage
 
