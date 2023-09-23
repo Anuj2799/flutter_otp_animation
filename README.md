@@ -1,4 +1,4 @@
-Animated Otp Field is OTP text field having worm type animation.
+Animated Otp Field is OTP text field having worm type animation with full customization which hse provision of directionality as well.
 
 ## Inspired from
 [Text Field Interaction](https://dribbble.com/shots/5005121-Text-Field-Interaction-Experiment-IV)
