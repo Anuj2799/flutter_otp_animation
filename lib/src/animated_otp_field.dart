@@ -225,7 +225,7 @@ class _AnimatedOtpFieldState extends State<AnimatedOtpField> with TickerProvider
           if (widget.showButton && widget.direction == Direction.rtl)
             SizedBox(
               height: widget.backgroundHeight,
-              width: (MediaQuery.of(context).size.width - widget.backgroundWidth) / 2,
+              width: (MediaQuery.of(context).size.width - widget.backgroundWidth).abs() / 2,
               child: Stack(
                 children: [
                   ValueListenableBuilder(
