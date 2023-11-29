@@ -39,32 +39,35 @@ class OtpField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: EdgeInsets.only(
-            left: padding,
-            top: verticalPadding,
-            bottom: verticalPadding,
-          ),
-          child: ValueListenableBuilder(
-            builder: (BuildContext context, value, Widget? child) {
-              return InkWell(
-                onTap: () {
-                  onTapCallBackFunction(index);
-                },
-                child: _setWidgetAccordingToOtpEntered(
-                  (direction == Direction.ltr) ? index : (numberOfFields - NumberConstants.i1 - index),
-                ),
-              );
-            },
-            valueListenable: otpValue,
-          ),
-        );
-      },
-      scrollDirection: Axis.horizontal,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: numberOfFields,
+    return SizedBox(
+      width: backgroundWidth,
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: EdgeInsets.only(
+              left: padding,
+              top: verticalPadding,
+              bottom: verticalPadding,
+            ),
+            child: ValueListenableBuilder(
+              builder: (BuildContext context, value, Widget? child) {
+                return InkWell(
+                  onTap: () {
+                    onTapCallBackFunction(index);
+                  },
+                  child: _setWidgetAccordingToOtpEntered(
+                    (direction == Direction.ltr) ? index : (numberOfFields - NumberConstants.i1 - index),
+                  ),
+                );
+              },
+              valueListenable: otpValue,
+            ),
+          );
+        },
+        scrollDirection: Axis.horizontal,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: numberOfFields,
+      ),
     );
   }
 
@@ -97,7 +100,7 @@ class OtpField extends StatelessWidget {
 
   /// Calculating the even space between the text fields
   double get padding =>
-      (backgroundWidth - (numberOfFields.toDouble() * NumberConstants.d5)) / (numberOfFields.toDouble() + NumberConstants.d1);
+      (backgroundWidth - (numberOfFields.toDouble() * fieldWidth)) / (numberOfFields.toDouble() + NumberConstants.d1);
 }
 
 /// To set the direction of the widget
