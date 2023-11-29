@@ -68,6 +68,7 @@ class OtpField extends StatelessWidget {
     );
   }
 
+  /// Replacing the entered text with the empty container field
   Widget _setWidgetAccordingToOtpEntered(int index) {
     if (listOfValues.asMap().containsKey(index)) {
       return SizedBox(
