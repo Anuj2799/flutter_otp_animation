@@ -3,7 +3,7 @@ Animated Otp Field is OTP text field having worm type animation with full custom
 <a href="https://www.buymeacoffee.com/AnujPatel" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Inspired from
-[Text Field Interaction](https://dribbble.com/shots/5005121-Text-Field-Interaction-Experiment-IV)
+[Text Field Interaction](https://dribbble.com/shots/5005121-Text-Field-Interaction-Experiment-IV) by Oleg Frolov
 
 ## Screenshots and Screen recording
 
