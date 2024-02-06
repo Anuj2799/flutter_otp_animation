@@ -10,12 +10,12 @@ Flutter Otp Animation is OTP text field having worm type animation with full cus
 <br />
 
 #### Flutter Otp Animation with direction left-to-right `direction: Direction.ltr`
-![Flutter Otp Animation](https://github.com/Anuj2799/flutter_otp_animation/blob/development/assets/anim_otp_ltr.gif)
+![Flutter Otp Animation](https://raw.githubusercontent.com/Anuj2799/flutter_otp_animation/main/assets/anim_otp_ltr.gif)
 
 <br />
 
 #### Flutter Otp Animation with direction right-to-left `direction: Direction.rtl`
-![Flutter Otp Animation](https://github.com/Anuj2799/flutter_otp_animation/blob/development/assets/anim_otp_rtl.gif)
+![Flutter Otp Animation](https://raw.githubusercontent.com/Anuj2799/flutter_otp_animation/main/assets/anim_otp_rtl.gif)
 
 ## Usage
 
