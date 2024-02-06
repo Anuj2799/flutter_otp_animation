@@ -1,11 +1,11 @@
-import 'package:animated_otp_field/constant/colour_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../constant/colour_constant.dart';
 import '../constant/dimensions.dart';
 import 'helper.dart';
 
-class AnimatedOtpField extends StatefulWidget {
+class FlutterOtpAnimation extends StatefulWidget {
   /// [backgroundHeight] is used to set the height of the
   /// OTP field, by default it is set to 50.0
   final double backgroundHeight;
@@ -130,7 +130,7 @@ class AnimatedOtpField extends StatefulWidget {
   /// [keyboardAppearance] can be used to set the light or dark mode for iOS keyboard.
   final Brightness? keyboardAppearance;
 
-  const AnimatedOtpField({
+  const FlutterOtpAnimation({
     Key? key,
     this.backgroundHeight = NumberConstants.d50,
     this.backgroundWidth = NumberConstants.d250,
@@ -173,10 +173,10 @@ class AnimatedOtpField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AnimatedOtpField> createState() => _AnimatedOtpFieldState();
+  State<FlutterOtpAnimation> createState() => _FlutterOtpAnimationState();
 }
 
-class _AnimatedOtpFieldState extends State<AnimatedOtpField> with TickerProviderStateMixin {
+class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerProviderStateMixin {
   final ValueNotifier<bool> _isFieldAnimationCompleted = ValueNotifier(false);
   final ValueNotifier<bool> _isEveryFieldFilled = ValueNotifier(false);
   final ValueNotifier<bool> _onceTapDone = ValueNotifier(false);

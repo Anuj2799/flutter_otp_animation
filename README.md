@@ -1,4 +1,4 @@
-Animated Otp Field is OTP text field having worm type animation with full customization which hse provision of directionality as well.
+Flutter Otp Animation is OTP text field having worm type animation with full customization which hse provision of directionality as well.
 
 <a href="https://www.buymeacoffee.com/AnujPatel" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
@@ -9,22 +9,22 @@ Animated Otp Field is OTP text field having worm type animation with full custom
 
 <br />
 
-#### Animated OTP Field with direction left-to-right `direction: Direction.ltr`
-![Animated OTP Field](https://github.com/Anuj2799/animated_otp_field/blob/development/assets/anim_otp_ltr.gif)
+#### Flutter Otp Animation with direction left-to-right `direction: Direction.ltr`
+![Flutter Otp Animation](https://github.com/Anuj2799/flutter_otp_animation/blob/development/assets/anim_otp_ltr.gif)
 
 <br />
 
-#### Animated OTP Field with direction right-to-left `direction: Direction.rtl`
-![Animated OTP Field](https://github.com/Anuj2799/animated_otp_field/blob/development/assets/anim_otp_rtl.gif)
+#### Flutter Otp Animation with direction right-to-left `direction: Direction.rtl`
+![Flutter Otp Animation](https://github.com/Anuj2799/flutter_otp_animation/blob/development/assets/anim_otp_rtl.gif)
 
 ## Usage
 
 #### Installation
 
-Add `animated_otp_field: any` to your `pubspec.yaml` dependencies. And import it:
+Add `flutter_otp_animation: any` to your `pubspec.yaml` dependencies. And import it:
 
 ```dart
-import 'package:animated_otp_field/animated_otp_field.dart';
+import 'package:flutter_otp_animation/flutter_otp_animation.dart';
 ```
 
 #### Example

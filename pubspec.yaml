@@ -1,7 +1,7 @@
-name: animated_otp_field
-description: Animated Otp Field is OTP text field having worm type animation with full customization which hse provision of directionality as well.
+name: flutter_otp_animation
+description: Flutter Otp Animation is OTP text field having worm type animation with full customization which hse provision of directionality as well.
 version: 0.0.1
-repository: https://github.com/Anuj2799/animated_otp_field
+repository: https://github.com/Anuj2799/flutter_otp_animation
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
