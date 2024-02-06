@@ -1,5 +1,5 @@
-import 'package:animated_otp_field/animated_otp_field.dart';
-import 'package:animated_otp_field/constant/colour_constant.dart';
+import 'package:flutter_otp_animation/flutter_otp_animation.dart';
+import 'package:flutter_otp_animation/constant/colour_constant.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Animated OTP Field',
+      title: 'Flutter Otp Animation',
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: AppColors.backgroundColour,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: AnimatedOtpField(
+        child: FlutterOtpAnimation(
           onChange: (value) {
             debugPrint('value :: $value');
           },
