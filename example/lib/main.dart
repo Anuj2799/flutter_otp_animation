@@ -2,7 +2,6 @@ import 'package:flutter_otp_animation/flutter_otp_animation.dart';
 import 'package:flutter_otp_animation/constant/colour_constant.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const MyApp());
 }

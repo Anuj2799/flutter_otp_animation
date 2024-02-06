@@ -56,7 +56,9 @@ class OtpField extends StatelessWidget {
                     onTapCallBackFunction(index);
                   },
                   child: _setWidgetAccordingToOtpEntered(
-                    (direction == Direction.ltr) ? index : (numberOfFields - NumberConstants.i1 - index),
+                    (direction == Direction.ltr)
+                        ? index
+                        : (numberOfFields - NumberConstants.i1 - index),
                   ),
                 );
               },
@@ -100,7 +102,8 @@ class OtpField extends StatelessWidget {
 
   /// Calculating the even space between the text fields
   double get padding =>
-      (backgroundWidth - (numberOfFields.toDouble() * fieldWidth)) / (numberOfFields.toDouble() + NumberConstants.d1);
+      (backgroundWidth - (numberOfFields.toDouble() * fieldWidth)) /
+      (numberOfFields.toDouble() + NumberConstants.d1);
 }
 
 /// To set the direction of the widget

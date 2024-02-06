@@ -176,16 +176,20 @@ class FlutterOtpAnimation extends StatefulWidget {
   State<FlutterOtpAnimation> createState() => _FlutterOtpAnimationState();
 }
 
-class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerProviderStateMixin {
+class _FlutterOtpAnimationState extends State<FlutterOtpAnimation>
+    with TickerProviderStateMixin {
   final ValueNotifier<bool> _isFieldAnimationCompleted = ValueNotifier(false);
   final ValueNotifier<bool> _isEveryFieldFilled = ValueNotifier(false);
   final ValueNotifier<bool> _onceTapDone = ValueNotifier(false);
   final ValueNotifier<bool> _isBtnAnimationCompleted = ValueNotifier(false);
-  final ValueNotifier<double> _focusedFieldWidth = ValueNotifier(NumberConstants.d0);
-  final ValueNotifier<double> _sliderLeftPadding = ValueNotifier(NumberConstants.d0);
+  final ValueNotifier<double> _focusedFieldWidth =
+      ValueNotifier(NumberConstants.d0);
+  final ValueNotifier<double> _sliderLeftPadding =
+      ValueNotifier(NumberConstants.d0);
   final ValueNotifier<double> _extraPadding = ValueNotifier(NumberConstants.d0);
   final ValueNotifier<int> _incrementValue = ValueNotifier(NumberConstants.i0);
-  final ValueNotifier<int> _checkForBlinkAnimation = ValueNotifier(NumberConstants.i0);
+  final ValueNotifier<int> _checkForBlinkAnimation =
+      ValueNotifier(NumberConstants.i0);
   final ValueNotifier<String> _otpValues = ValueNotifier('');
   final FocusNode _focusNode = FocusNode();
   final List<String> _listOfValues = [];
@@ -196,7 +200,8 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
 
   /// Get the padding as per the fields entered
   double get padding =>
-      (widget.backgroundWidth - (widget.numberOfFields.toDouble() * widget.fieldWidth)) /
+      (widget.backgroundWidth -
+          (widget.numberOfFields.toDouble() * widget.fieldWidth)) /
       (widget.numberOfFields.toDouble() + NumberConstants.d1);
 
   String _previousText = '';
@@ -217,7 +222,9 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: widget.showButton && widget.direction == Direction.ltr ? Alignment.centerRight : Alignment.centerLeft,
+      alignment: widget.showButton && widget.direction == Direction.ltr
+          ? Alignment.centerRight
+          : Alignment.centerLeft,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -225,27 +232,37 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
           if (widget.showButton && widget.direction == Direction.rtl)
             SizedBox(
               height: widget.backgroundHeight,
-              width: (MediaQuery.of(context).size.width - widget.backgroundWidth).abs() / 2,
+              width:
+                  (MediaQuery.of(context).size.width - widget.backgroundWidth)
+                          .abs() /
+                      2,
               child: Stack(
                 children: [
                   ValueListenableBuilder(
                     valueListenable: _isBtnAnimationCompleted,
                     builder: (context, value, child) {
                       return AnimatedPositioned(
-                        duration: widget.buttonAnimationDuration ?? const Duration(milliseconds: NumberConstants.t200),
-                        right: _isBtnAnimationCompleted.value ? widget.buttonPaddingFromField : NumberConstants.d0,
+                        duration: widget.buttonAnimationDuration ??
+                            const Duration(milliseconds: NumberConstants.t200),
+                        right: _isBtnAnimationCompleted.value
+                            ? widget.buttonPaddingFromField
+                            : NumberConstants.d0,
                         child: ValueListenableBuilder(
                           valueListenable: _isFieldAnimationCompleted,
-                          builder: (BuildContext context, value, Widget? child) {
+                          builder:
+                              (BuildContext context, value, Widget? child) {
                             return GestureDetector(
                               onTap: widget.onButtonTap,
                               child: AnimatedContainer(
-                                duration: widget.buttonAnimationDuration ?? const Duration(milliseconds: NumberConstants.t200),
+                                duration: widget.buttonAnimationDuration ??
+                                    const Duration(
+                                        milliseconds: NumberConstants.t200),
                                 height: widget.backgroundHeight,
                                 width: _isBtnAnimationCompleted.value
                                     ? widget.backgroundHeight
                                     : _isFieldAnimationCompleted.value
-                                        ? (widget.backgroundHeight + widget.buttonPaddingFromField)
+                                        ? (widget.backgroundHeight +
+                                            widget.buttonPaddingFromField)
                                         : NumberConstants.d0,
                                 decoration: BoxDecoration(
                                   color: widget.buttonColour,
@@ -254,11 +271,14 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
                                 child: _isFieldAnimationCompleted.value
                                     ? (widget.buttonContent ??
                                         Center(
-                                          child: Icon(Icons.arrow_back_outlined, color: widget.defaultButtonIconColour),
+                                          child: Icon(Icons.arrow_back_outlined,
+                                              color: widget
+                                                  .defaultButtonIconColour),
                                         ))
                                     : null,
                                 onEnd: () {
-                                  if (!_isBackspaceTapped) _isBtnAnimationCompleted.value = true;
+                                  if (!_isBackspaceTapped)
+                                    _isBtnAnimationCompleted.value = true;
                                 },
                               ),
                             );
@@ -281,7 +301,9 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
                   height: widget.backgroundHeight,
                   width: widget.backgroundWidth,
                   child: Theme(
-                    data: ThemeData(textSelectionTheme: const TextSelectionThemeData(cursorColor: AppColors.transparent)),
+                    data: ThemeData(
+                        textSelectionTheme: const TextSelectionThemeData(
+                            cursorColor: AppColors.transparent)),
                     child: TextField(
                       cursorColor: AppColors.transparent,
                       focusNode: _focusNode,
@@ -290,15 +312,22 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
                       controller: _textEditingController,
                       enableSuggestions: false,
                       autocorrect: false,
-                      autofillHints: widget.enableAutoFill ? const <String>[AutofillHints.oneTimeCode] : null,
+                      autofillHints: widget.enableAutoFill
+                          ? const <String>[AutofillHints.oneTimeCode]
+                          : null,
                       onChanged: _onChangeHandler,
                       readOnly: widget.readOnly,
                       onSubmitted: widget.onSubmitted,
                       onEditingComplete: widget.onEditingComplete,
                       keyboardAppearance: widget.keyboardAppearance,
-                      style: const TextStyle(color: AppColors.transparent, fontSize: NumberConstants.d0),
+                      style: const TextStyle(
+                          color: AppColors.transparent,
+                          fontSize: NumberConstants.d0),
                       keyboardType: widget.textInputType,
-                      inputFormatters: [LengthLimitingTextInputFormatter(widget.numberOfFields), ...?widget.inputFormatters],
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(widget.numberOfFields),
+                        ...?widget.inputFormatters
+                      ],
                       decoration: const InputDecoration(
                         fillColor: AppColors.transparent,
                         border: InputBorder.none,
@@ -327,7 +356,8 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
                         width: widget.backgroundWidth,
                         decoration: BoxDecoration(
                           color: widget.backgroundColour,
-                          borderRadius: _otpFieldBorderRadiusHandler(value: value),
+                          borderRadius:
+                              _otpFieldBorderRadiusHandler(value: value),
                         ),
                         child: OtpField(
                           fieldColour: widget.fieldColour,
@@ -357,18 +387,27 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
                   valueListenable: _focusedFieldWidth,
                   builder: (BuildContext context, value, Widget? child) {
                     return AnimatedPositioned(
-                      duration: widget.slideAnimationDuration ?? const Duration(milliseconds: NumberConstants.t200),
-                      height: widget.backgroundHeight - (widget.verticalPadding * 2),
+                      duration: widget.slideAnimationDuration ??
+                          const Duration(milliseconds: NumberConstants.t200),
+                      height: widget.backgroundHeight -
+                          (widget.verticalPadding * 2),
                       width: _focusedFieldWidth.value,
-                      left: widget.direction == Direction.ltr ? _sliderLeftPadding.value : null,
-                      right: widget.direction == Direction.rtl ? _sliderLeftPadding.value : null,
+                      left: widget.direction == Direction.ltr
+                          ? _sliderLeftPadding.value
+                          : null,
+                      right: widget.direction == Direction.rtl
+                          ? _sliderLeftPadding.value
+                          : null,
                       onEnd: _onSliderEndEvent,
                       child: ValueListenableBuilder(
                         valueListenable: _checkForBlinkAnimation,
                         builder: (context, value, child) {
                           /// Main slider widget fade transition
                           return FadeTransition(
-                            opacity: _checkForBlinkAnimation.value != NumberConstants.i2 ? _stopFadeInFadeOut : _fadeInFadeOut,
+                            opacity: _checkForBlinkAnimation.value !=
+                                    NumberConstants.i2
+                                ? _stopFadeInFadeOut
+                                : _fadeInFadeOut,
 
                             /// Main slider widget
                             child: Container(
@@ -388,27 +427,36 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
           if (widget.showButton && widget.direction == Direction.ltr)
             SizedBox(
               height: widget.backgroundHeight,
-              width: (MediaQuery.of(context).size.width - widget.backgroundWidth) / 2,
+              width:
+                  (MediaQuery.of(context).size.width - widget.backgroundWidth) /
+                      2,
               child: Stack(
                 children: [
                   ValueListenableBuilder(
                     valueListenable: _isBtnAnimationCompleted,
                     builder: (BuildContext context, value, Widget? child) {
                       return AnimatedPositioned(
-                        duration: widget.buttonAnimationDuration ?? const Duration(milliseconds: NumberConstants.t200),
-                        left: _isBtnAnimationCompleted.value ? widget.buttonPaddingFromField : NumberConstants.d0,
+                        duration: widget.buttonAnimationDuration ??
+                            const Duration(milliseconds: NumberConstants.t200),
+                        left: _isBtnAnimationCompleted.value
+                            ? widget.buttonPaddingFromField
+                            : NumberConstants.d0,
                         child: ValueListenableBuilder(
                           valueListenable: _isFieldAnimationCompleted,
-                          builder: (BuildContext context, value, Widget? child) {
+                          builder:
+                              (BuildContext context, value, Widget? child) {
                             return GestureDetector(
                               onTap: widget.onButtonTap,
                               child: AnimatedContainer(
-                                duration: widget.buttonAnimationDuration ?? const Duration(milliseconds: NumberConstants.t200),
+                                duration: widget.buttonAnimationDuration ??
+                                    const Duration(
+                                        milliseconds: NumberConstants.t200),
                                 height: widget.backgroundHeight,
                                 width: _isBtnAnimationCompleted.value
                                     ? widget.backgroundHeight
                                     : _isFieldAnimationCompleted.value
-                                        ? (widget.backgroundHeight + widget.buttonPaddingFromField)
+                                        ? (widget.backgroundHeight +
+                                            widget.buttonPaddingFromField)
                                         : NumberConstants.d0,
                                 decoration: BoxDecoration(
                                   color: widget.buttonColour,
@@ -417,11 +465,15 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
                                 child: _isFieldAnimationCompleted.value
                                     ? (widget.buttonContent ??
                                         Center(
-                                          child: Icon(Icons.arrow_forward_outlined, color: widget.defaultButtonIconColour),
+                                          child: Icon(
+                                              Icons.arrow_forward_outlined,
+                                              color: widget
+                                                  .defaultButtonIconColour),
                                         ))
                                     : null,
                                 onEnd: () {
-                                  if (!_isBackspaceTapped) _isBtnAnimationCompleted.value = true;
+                                  if (!_isBackspaceTapped)
+                                    _isBtnAnimationCompleted.value = true;
                                 },
                               ),
                             );
@@ -440,13 +492,18 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
 
   /// Handle events at the time of initState of this class
   void _initialize() {
-    _textEditingController = widget.textEditingController ?? TextEditingController();
+    _textEditingController =
+        widget.textEditingController ?? TextEditingController();
     _fadeAnimationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: NumberConstants.t500),
     );
-    _fadeInFadeOut = Tween<double>(begin: NumberConstants.d0, end: NumberConstants.d1).animate(_fadeAnimationController);
-    _stopFadeInFadeOut = Tween<double>(begin: NumberConstants.d1, end: NumberConstants.d1).animate(_fadeAnimationController);
+    _fadeInFadeOut =
+        Tween<double>(begin: NumberConstants.d0, end: NumberConstants.d1)
+            .animate(_fadeAnimationController);
+    _stopFadeInFadeOut =
+        Tween<double>(begin: NumberConstants.d1, end: NumberConstants.d1)
+            .animate(_fadeAnimationController);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (widget.autoFocus) _initialFocusAnimationHandler(isAutoFocused: true);
@@ -466,10 +523,12 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
       _checkForBlinkAnimation.value++;
 
       /// Checking whether a second time animation is completed or not
-      if (_checkForBlinkAnimation.value == NumberConstants.i2 && widget.blinkAnimationDuration != Duration.zero) {
+      if (_checkForBlinkAnimation.value == NumberConstants.i2 &&
+          widget.blinkAnimationDuration != Duration.zero) {
         /// Fade In Fade Out Animation logic
         _fadeAnimationController
-          ..duration = widget.blinkAnimationDuration ?? const Duration(milliseconds: NumberConstants.t500)
+          ..duration = widget.blinkAnimationDuration ??
+              const Duration(milliseconds: NumberConstants.t500)
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
               _fadeAnimationController.reverse();
@@ -483,7 +542,8 @@ class _FlutterOtpAnimationState extends State<FlutterOtpAnimation> with TickerPr
       }
 
       /// Checking whether all the fields has been completed or not in order to stop the further animation
-      if (_incrementValue.value == (widget.numberOfFields + NumberConstants.i1)) {
+      if (_incrementValue.value ==
+          (widget.numberOfFields + NumberConstants.i1)) {
         _isEveryFieldFilled.value = true;
       }
 
