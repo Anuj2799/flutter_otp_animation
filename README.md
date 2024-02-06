@@ -1,5 +1,9 @@
 Animated Otp Field is OTP text field having worm type animation with full customization which hse provision of directionality as well.
 
+<a href="https://www.buymeacoffee.com/anujpatel" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="AnujPatel" data-color="#FFDD00" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+
 ## Inspired from
 [Text Field Interaction](https://dribbble.com/shots/5005121-Text-Field-Interaction-Experiment-IV)
 
