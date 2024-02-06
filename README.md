@@ -29,7 +29,7 @@ import 'package:flutter_otp_animation/flutter_otp_animation.dart';
 
 #### Example
 
-    AnimatedOtpField(
+    FlutterOtpAnimation(
           onChange: (value) {
             debugPrint('value :: $value');
           },
