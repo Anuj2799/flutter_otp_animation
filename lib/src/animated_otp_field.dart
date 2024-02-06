@@ -196,7 +196,7 @@ class _AnimatedOtpFieldState extends State<AnimatedOtpField> with TickerProvider
 
   /// Get the padding as per the fields entered
   double get padding =>
-      (widget.backgroundWidth - (widget.numberOfFields.toDouble() * NumberConstants.d5)) /
+      (widget.backgroundWidth - (widget.numberOfFields.toDouble() * widget.fieldWidth)) /
       (widget.numberOfFields.toDouble() + NumberConstants.d1);
 
   String _previousText = '';
@@ -225,7 +225,7 @@ class _AnimatedOtpFieldState extends State<AnimatedOtpField> with TickerProvider
           if (widget.showButton && widget.direction == Direction.rtl)
             SizedBox(
               height: widget.backgroundHeight,
-              width: (MediaQuery.of(context).size.width - widget.backgroundWidth) / 2,
+              width: (MediaQuery.of(context).size.width - widget.backgroundWidth).abs() / 2,
               child: Stack(
                 children: [
                   ValueListenableBuilder(
@@ -537,7 +537,7 @@ class _AnimatedOtpFieldState extends State<AnimatedOtpField> with TickerProvider
         if (_incrementValue.value <= widget.numberOfFields) {
           _incrementValue.value++;
           if ((padding * _incrementValue.value) != padding) {
-            _extraPadding.value += NumberConstants.d5;
+            _extraPadding.value += widget.fieldWidth;
           }
         }
       }
@@ -594,7 +594,7 @@ class _AnimatedOtpFieldState extends State<AnimatedOtpField> with TickerProvider
     if (_incrementValue.value <= widget.numberOfFields) {
       _incrementValue.value++;
       if ((padding * _incrementValue.value) != padding) {
-        _extraPadding.value += NumberConstants.d5;
+        _extraPadding.value += widget.fieldWidth;
       }
     }
 
