@@ -176,4 +176,4 @@ Contribution towards our repository is always welcome, we request contributors t
 <br />
 
 ## LICENSE
-Searchbar Animation is [MIT-licensed](https://github.com/Anuj2799/searchbar_animation/blob/master/LICENSE "MIT-licensed").
+FlutterOtpAnimation is [MIT-licensed](https://github.com/Anuj2799/flutter_otp_animation/blob/main/LICENSE "MIT-licensed").
